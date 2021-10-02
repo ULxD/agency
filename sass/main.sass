@@ -10,6 +10,10 @@
     background-size: cover
     background-position: center
 
+    @include mobile
+        height: 100vh
+
+
     .title-container
         color: $light-color
         display: flex
@@ -22,10 +26,18 @@
             font-size: 3rem
             @extend %title-text-shadow
 
+            @include mobile
+                font-size: 2rem
+
+
         h1
             font-size: 4rem
             margin-top: 1rem
             @extend %title-text-shadow
+
+            @include mobile
+                font-size: 2rem
+
 
     .nav-container
         display: flex
@@ -37,6 +49,9 @@
         padding: 1.5rem 2rem
         background-color: $black
         z-index: 10
+        
+        @include mobile
+            padding: 1rem
 
         .brand
             color: $light-color
@@ -49,6 +64,9 @@
             align-items: center
             height: 100%
 
+            @include mobile
+                display: none
+
             li
                 margin: 5px 10px
 
@@ -60,6 +78,9 @@
             font-size: 2rem
             color: $light-color
             display: none
+
+            @include mobile
+                display: block
 
 .services-container
     text-align: center
@@ -81,6 +102,10 @@
             padding: 2rem
             border: 1px solid #ccc
             transition: .3s
+
+            @include mobile
+                width: 90%
+                margin: 3%
 
             i
                 color: $primary-color
@@ -108,9 +133,15 @@
     h2
         @extend %section-title
 
+        @include mobile
+            font-size: 2rem
+
     .jobs-list
         display: flex
         padding: 2rem 0
+
+        @include mobile
+            flex-wrap: wrap
 
         .first-job
             background-image: url('../img/job.jpg')
@@ -123,10 +154,17 @@
             @extend %center-bg
             @extend %card-hover
 
+            @include mobile
+                width: 100%
+                margin: 1% 2%
+
         .others-jobs-container
             display: flex
             flex-wrap: wrap
             width: 68%
+
+            @include mobile
+                width: 100%
 
             .job-card
                 position: relative
@@ -137,6 +175,10 @@
                 cursor: pointer
                 @extend %center-bg
                 @extend %card-hover
+
+                @include mobile 
+                    width: 100%
+                    margin: 1.2vw
 
             #job2
                 background-image: url('../img/job2.jpg')
@@ -188,10 +230,16 @@ footer
             color: #FFF
             font-weight: bold
             margin-bottom: 1rem
+        
+        @include mobile
+            text-align: center
             
 
     .footer-desc-container, .footer-links-container
         width: 50%
+
+        @include mobile
+            width: 100%
 
     
     .footer-desc-container
@@ -199,11 +247,21 @@ footer
             width: 80%
             line-height: 1.3
 
+            @include mobile
+                width: 100%
+                margin-bottom: 2vh
+
     .footer-links-container
         display: flex
 
+        @include mobile
+            flex-direction: column
+
         &-list
             padding: 0 1rem
+
+            @include mobile
+                margin: 2vh 0vw 2vh 0vw
 
             li
                 margin-bottom: .5rem
